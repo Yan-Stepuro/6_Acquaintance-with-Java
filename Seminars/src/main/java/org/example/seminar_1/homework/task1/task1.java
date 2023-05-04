@@ -24,9 +24,10 @@ package org.example.seminar1_homework.task1;
 //split(), trim()
 
 
-public class task1 {
+public class
+task1 {
     public static void main(String[] args) {
-        String s = "   hello   world   ";
+        String s = " a good   example   ";
         System.out.println(reverseWords(s));
     }
 
