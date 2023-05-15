@@ -25,25 +25,18 @@ public class task2 {
         Scanner sc = new Scanner(System.in);
         System.out.println("Input characters: ");
         String s = sc.nextLine();
-        Boolean checkInput = true;
 
         System.out.println("Input: " + s);
 
-        for (int i = 0; i < s.length(); i++) {
-            if (s.charAt(i) != '(' && s.charAt(i) != ')' && s.charAt(i) != '{' && s.charAt(i) != '}' && s.charAt(i) != '[' && s.charAt(i) != ']') {
-                checkInput = false;
-            }
-        }
-
-        if (checkInput == true) {
-            System.out.println("Output: " + isValid(s));
+        if (CheckInput(s)) {
+            System.out.println("Output: " + IsValid(s));
         }
         else {
             System.out.println("Output: Invalid input");
         }
     }
 
-    public static Boolean isValid(String s) {
+    public static Boolean IsValid(String s) {
         Stack<Character> openBr = new Stack<>();
 
         for (char item : s.toCharArray()) {
@@ -65,6 +58,17 @@ public class task2 {
         }
 
         return openBr.isEmpty();
+    }
 
+    public static Boolean CheckInput(String s) {
+        Boolean checkInput = true;
+
+        for (int i = 0; i < s.length(); i++) {
+            if (s.charAt(i) != '(' && s.charAt(i) != ')' && s.charAt(i) != '{' && s.charAt(i) != '}' && s.charAt(i) != '[' && s.charAt(i) != ']') {
+                checkInput = false;
+            }
+        }
+
+        return checkInput;
     }
 }
