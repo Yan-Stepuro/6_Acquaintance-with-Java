@@ -1,4 +1,4 @@
-package org.example.seminar_4.homework.task1;
+package org.example.seminar_4.homework.task1_2;
 
 //1)Вывести список на экран в перевернутом виде (без массивов и ArrayList)
 //Пример:
@@ -6,13 +6,12 @@ package org.example.seminar_4.homework.task1;
 //        Вывод:
 //        4->3->2->1
 
-//вариант через get
+//Вариант через add и pollFirst с выведением в виде списка
 
 import java.util.LinkedList;
-import java.util.PriorityQueue;
 import java.util.Scanner;
 
-public class task1 {
+public class Main {
     public static void main(String[] args) {
         LinkedList<Integer> list = new LinkedList<>();
         Scanner sc = new Scanner(System.in);
@@ -23,8 +22,12 @@ public class task1 {
             list.add(sc.nextInt());
         }
 
+        System.out.println(list);
+
         for (int i = list.size() - 1; i >= 0; i--) {
-            System.out.println(list.get(i));
+            list.add(i, list.pollFirst());
         }
+
+        System.out.println(list);
     }
 }
