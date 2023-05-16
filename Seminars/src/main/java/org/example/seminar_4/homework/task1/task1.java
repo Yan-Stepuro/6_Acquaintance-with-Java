@@ -9,7 +9,6 @@ package org.example.seminar_4.homework.task1;
 //вариант через get
 
 import java.util.LinkedList;
-import java.util.PriorityQueue;
 import java.util.Scanner;
 
 public class task1 {
