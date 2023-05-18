@@ -21,7 +21,7 @@ package org.example.seminar_5.homework.task2;
 //        Иван Ежов
 //Написать программу, которая найдёт и выведет повторяющиеся имена с количеством повторений. Отсортировать по убыванию популярности.
 
-public class Main {
+public class Main { // доделать до 18.05
     public static void main(String[] args) {
 
     }
