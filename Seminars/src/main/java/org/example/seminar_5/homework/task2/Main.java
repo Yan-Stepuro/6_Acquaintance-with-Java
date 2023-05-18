@@ -23,6 +23,7 @@ package org.example.seminar_5.homework.task2;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.HashMap;
 
 public class Main { // доделать до 18.05
     public static void main(String[] args) {
@@ -51,5 +52,21 @@ public class Main { // доделать до 18.05
 
         System.out.println(str);
         System.out.println(Arrays.asList(names));
+
+        GetRepeats(names);
+    }
+
+    public static void GetRepeats(String[] names) {
+        HashMap<String, Integer> db = new HashMap<>();
+
+        for (int i = 0; i < names.length; i++) {
+            if (db.containsKey(names[i])) {
+                db.put(names[i], db.get(names[i]) + 1);
+            } else {
+                db.put(names[i], 1);
+            }
+        }
+        System.out.println(db);
+
     }
 }
