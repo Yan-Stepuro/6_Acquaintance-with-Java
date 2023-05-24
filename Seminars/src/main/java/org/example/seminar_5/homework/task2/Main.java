@@ -25,7 +25,7 @@ package org.example.seminar_5.homework.task2;
 import java.util.*;
 import java.util.stream.Collectors;
 
-public class Main { // доделать до 18.05
+public class Main {
     public static void main(String[] args) {
         String str =
                 "Иван Иванов\n" +
@@ -73,7 +73,6 @@ public class Main { // доделать до 18.05
 //        List<Map.Entry<String, Integer>> list = db.entrySet().stream()
 //                .sorted((e1, e2) -> -e1.getValue().compareTo(e2.getValue()))
 //                .collect(Collectors.toList());
-//
 //        System.out.println(list);
     }
 }
