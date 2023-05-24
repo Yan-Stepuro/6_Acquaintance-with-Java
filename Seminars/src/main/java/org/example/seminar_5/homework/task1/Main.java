@@ -6,7 +6,7 @@ package org.example.seminar_5.homework.task1;
 //        Запрос: Россия
 //        Ответ: Россия - 2
 //        toLoverCase().
-//        (Усложнение - игнорировать пунктуацию)*
+//        (Усложнение - игнорировать пунктуацию)* - регулярные выражения
 
 import java.util.HashMap;
 import java.util.Map;

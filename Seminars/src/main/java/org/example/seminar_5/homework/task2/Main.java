@@ -21,9 +21,9 @@ package org.example.seminar_5.homework.task2;
 //        Иван Ежов
 //Написать программу, которая найдёт и выведет повторяющиеся имена с количеством повторений. Отсортировать по убыванию популярности.
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.HashMap;
+
+import java.util.*;
+import java.util.stream.Collectors;
 
 public class Main { // доделать до 18.05
     public static void main(String[] args) {
@@ -47,26 +47,33 @@ public class Main { // доделать до 18.05
                 "Петр Петин\n" +
                 "Иван Ежов";
 
-        String[] names = str.split("\n");
-
-
-        System.out.println(str);
-        System.out.println(Arrays.asList(names));
-
+        String[] names = str.split("\n| ");
         GetRepeats(names);
     }
 
     public static void GetRepeats(String[] names) {
-        HashMap<String, Integer> db = new HashMap<>();
+        Map<String, Integer> db = new TreeMap<>();
 
         for (int i = 0; i < names.length; i++) {
-            if (db.containsKey(names[i])) {
-                db.put(names[i], db.get(names[i]) + 1);
-            } else {
-                db.put(names[i], 1);
+            db.putIfAbsent(names[i], 0);
+            db.put(names[i], db.get(names[i]) + 1);
+        }
+
+        for (int i = 0; i < names.length; i++) {
+            if (db.get(names[i]).equals(1)) {
+                db.remove(names[i]);
             }
         }
-        System.out.println(db);
+//        System.out.println(db);
 
+        db.entrySet().stream()
+                .sorted(Map.Entry.<String, Integer>comparingByValue().reversed())
+                .forEach(System.out::println);
+
+//        List<Map.Entry<String, Integer>> list = db.entrySet().stream()
+//                .sorted((e1, e2) -> -e1.getValue().compareTo(e2.getValue()))
+//                .collect(Collectors.toList());
+//
+//        System.out.println(list);
     }
 }
