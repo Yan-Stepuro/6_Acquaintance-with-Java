@@ -51,7 +51,7 @@ public class Filter {
         while (true) {
             System.out.print("Введите цифру, соответстующую необходимому критерию. Для выхода нажмите 0: ");
             int selectFilter = Integer.parseInt(sc.nextLine());
-            if (selectFilter == 0) {
+             if (selectFilter == 0) {
                 System.out.println("Параметры фильтрации: " + filterValues);
                 break;
             } else if (selectFilter <= filterProperties.size()) {
@@ -80,10 +80,10 @@ public class Filter {
         Map<String, String> filterValues = getFilterValues(filterProperties);
 
         for (Notebook item : notebooks) {
-            if ((filterValues.get("ram") == null || item.getRam() >= Integer.parseInt(filterValues.get("ram")))
-                    &&(filterValues.get("HDD") == null || item.getHDD() >= Integer.parseInt(filterValues.get("HDD")))
-                    && (filterValues.get("os") == null || item.getOs().equalsIgnoreCase(filterValues.get("os")))
-                    && (filterValues.get("color") == null || item.getColor().equalsIgnoreCase(filterValues.get("color")))) {
+            if ((filterValues.get("ram") == null || item.ram >= Integer.parseInt(filterValues.get("ram")))
+                    &&(filterValues.get("HDD") == null || item.HDD >= Integer.parseInt(filterValues.get("HDD")))
+                    && (filterValues.get("os") == null || item.os.equalsIgnoreCase(filterValues.get("os")))
+                    && (filterValues.get("color") == null || item.color.equalsIgnoreCase(filterValues.get("color")))) {
                 filteredNotebooks.add(item);
             }
         }
