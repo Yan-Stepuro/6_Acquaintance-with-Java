@@ -24,7 +24,7 @@ public class Filter {
     /**
      *
      * @param className класс, из полей которого собираем фильтр
-     * @return Map с критериями фильтра
+     * @return возвращает Map<Integer, String> с критериями фильтра
      */
     public Map<Integer, String> getFilterFromClass(Class className) {
         Field[] arrayFields = Notebook.class.getDeclaredFields();
@@ -38,7 +38,7 @@ public class Filter {
     /**
      *
      * @param filterProperties map с критериями фильтра
-     * @return map с указанными минимальными параметрами фильтрации
+     * @return возвращает Map<String, String> с указанными минимальными параметрами фильтрации
      */
     public Map<String, String> getFilterValues(Map<Integer, String> filterProperties) {
         Map<String, String> filterValues = new HashMap<>();
@@ -71,7 +71,7 @@ public class Filter {
     /**
      *
      * @param notebooks множество ноутбуков
-     * @return отфильтрованное множество ноутбуков
+     * @return возвращает отфильтрованное множество ноутбуков
      */
     public Set<Notebook> filterNotebooks(Set<Notebook> notebooks) {
         Set<Notebook> filteredNotebooks = new HashSet<>();

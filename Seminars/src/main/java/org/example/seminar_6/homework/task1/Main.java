@@ -30,7 +30,7 @@ public class Main {
     }
 
     /**
-     *
+     * выводит множество
      * @param notebooks множество ноутбуков
      */
     public static void viewNotebooks(Set<Notebook> notebooks) {

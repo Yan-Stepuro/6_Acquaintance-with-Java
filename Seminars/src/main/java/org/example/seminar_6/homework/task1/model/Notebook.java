@@ -33,7 +33,7 @@ public class Notebook {
 
     /**
      *
-     * @return список ноутбуков
+     * @return возвращает множество ноутбуков
      */
     public static Set<Notebook> getNotebooks() {
         Set<Notebook> notebookSet = new HashSet<>();
